@@ -49,16 +49,20 @@
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <h2><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 发现</h2>
                 <hr>
-                <div class="media">
+                <div class="media" th:each="question:${questions}">
                     <div class="media-left">
                         <a href="#">
-                            <img class="media-object img-rounded" src="https://avatars0.githubusercontent.com/u/44112013?v=4">
+                            <img class="media-object img-rounded" th:src="${question.user.avatarUrl}">
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">怎么快速学会springboot开发</h4>
-                        点击进入看录制视频<br>
-                        <span class="text-desc">2个回复·31次浏览·1小时前</span>
+                        <h4 class="media-heading" th:text="${question.title}"></h4>
+                        <span th:text="${question.description}"></span><br>
+                        <span class="text-desc">
+                            <span th:text="${question.commentCount}"></span>个回复 ·
+                            <span th:text="${question.viewCount}"></span>次浏览 ·
+                            <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -14,4 +14,4 @@
 
 [flyway maven](https://flywaydb.org/getstarted/firststeps/maven)
 
-[lombok maven](https://www.projectlombok.org/setup/maven)
+[lombok maven](https://www.projectlombok.org/setup/mave)
