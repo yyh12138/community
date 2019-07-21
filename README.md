@@ -20,6 +20,14 @@
 
 [Spring MVC官方文档](https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html#spring-web)
 
+[generator](http://www.mybatis.org/generator/index.html)
+
+
+脚本操作：
+```
+mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
+```
 
 
 idea快捷键
@@ -39,3 +47,14 @@ ctrl+shift+↑：当前语句上移
 shift+enter：不破坏代码的换行
 
 ctrl+alt+←：回退至上一次的页面
+
+双击标签：全屏显示
+
+
+思路：
+1、由页面路径创建controller，controller内方法（返回值为该页面）接收前端信息，并将数据传到页面（model）
+
+2、由方法创建mapper，mapper中定义含sql注解的接口
+（若页面元素不止一张表的内容，则用dto创建新表关联两表，再提取出service，在service中先创建该方法，再在mapper中创建）
+
+3、编写页面
