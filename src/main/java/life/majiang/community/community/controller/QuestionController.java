@@ -18,6 +18,7 @@ public class QuestionController {
     public String question(@PathVariable(name = "id") Integer id,
             Model model){
         QuestionDTO questionDTO = questionService.getById(id);//questionDTO内不仅有question模型还有user
+        questionService.incView(id);//累加阅读数
         model.addAttribute("question",questionDTO);
         return "question";
     }
