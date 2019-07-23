@@ -32,7 +32,7 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 
 idea快捷键
 
-ctrl+F12：快速查询所有继承
+ctrl+F12：快速查询所有继承，查询类中所有方法
 
 Ctrl+shift+v：取出并生成匿名内部类的实例
 

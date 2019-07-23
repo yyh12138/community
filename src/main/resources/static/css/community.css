@@ -13,6 +13,9 @@ body{
     width: 55px;
     height: 55px;
 }
+.media-body{
+    padding-top: 10px;
+}
 .text-desc{
     font-size: 12px;
     font-weight: normal;
@@ -28,4 +31,11 @@ body{
 .jumbotron{
     margin-left: 80px;
     margin-top: 30px;
+}
+.comment{
+    margin: 12px 0;
+}
+.btn-comment{
+    float: right;
+    margin-bottom: 12px;
 }
