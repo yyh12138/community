@@ -67,6 +67,14 @@ body{
     color: #999;
     margin-top: 5px;
 }
+.menu .comment-icon{
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.menu .comment-icon:hover{
+    color: #499ef3;
+}
 .menu .icon{
     margin-right: 7px;
     font-size: 15px;

@@ -22,6 +22,7 @@
 
 [generator](http://www.mybatis.org/generator/index.html)
 
+[js的moment工具包](http://momentjs.cn/docs/)
 
 脚本操作：
 ```
