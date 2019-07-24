@@ -5,12 +5,16 @@ import life.majiang.community.community.exception.CustomizeException;
 import lombok.Data;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 @Data
-public class ResultDTO {
+public class ResultDTO<T> {
     //json中的前端状态码，便于程序处理
     private Integer code;
     //json中的状态信息，便于人理解
     private String message;
+    //不知道评论是否有列表
+    private T data;
 
     public static ResultDTO errorOf(Integer code, String message){
         ResultDTO resultDTO = new ResultDTO();
@@ -32,6 +36,14 @@ public class ResultDTO {
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(200);
         resultDTO.setMessage("请求成功");
+        return resultDTO;
+    }
+
+    public static <T>ResultDTO okOf(T t){
+        ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setCode(200);
+        resultDTO.setMessage("请求成功");
+        resultDTO.setData(t);
         return resultDTO;
     }
 }
