@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>发布 — 麻将社区</title>
+    <title>发布 — 码匠社区</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
     <link rel="stylesheet" href="/css/community.css" type="text/css"/>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/community.js" type="application/javascript"></script>
 </head>
 <body>
     <div th:insert="~{navigation :: nav}"></div>
@@ -20,7 +21,7 @@
                     <input type="hidden" name="id" th:value="${id}">
                     <div class="form-group">
                         <label for="title">问题标题（简单扼要）</label>
-                        <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="问题标题...">
+                        <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="问题标题..." autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="description">问题补充（必填，参照右侧提示）</label>
@@ -28,7 +29,23 @@
                     </div>
                     <div class="form-group">
                         <label for="tag">添加标签</label>
-                        <input type="text" class="form-control" id="tag" name="tag" th:value="${tag}" placeholder="输入标签，以逗号分隔">
+                        <input type="text" class="form-control" id="tag" name="tag" th:value="${tag}" placeholder="输入标签，以逗号分隔" autocomplete="off" onclick="showSelectTag()">
+                        <div id="select-tag" class="publish-tag-tab">
+                            <!-- 标签导航栏 -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" th:each="selectCategory:${tags}">
+                                    <a th:href="${'#'+selectCategory.categoryName}" aria-controls="home" role="tab" data-toggle="tab" th:text="${selectCategory.categoryName}"></a>
+                                </li>
+                            </ul>
+                            <!-- 标签主体页 -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane" th:id="${selectCategory.categoryName}" th:each="selectCategory:${tags}">
+                                    <span class="label label-info question-tag" th:each="selectTag:${selectCategory.tags}">
+                                        <span class="glyphicon-tag glyphicon" onclick="selectTag(this)" th:data-tag="${selectTag}" th:text="${selectTag}"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="container-fluid main ">
                         <div class="row">
