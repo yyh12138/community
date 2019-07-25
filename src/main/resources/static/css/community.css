@@ -27,6 +27,15 @@ body{
 .question-title{
     margin-top: 25px;
 }
+.question-tag{
+    margin-left: 5px;
+}
+.question-related{
+    font-size: 13px;
+    padding-left: 5px;
+    list-style: none;
+    line-height: 20px;
+}
 .community-menu{
     color: #999;
     font-size: 13px;
@@ -70,7 +79,6 @@ body{
 .menu .comment-icon{
     font-size: 15px;
     cursor: pointer;
-
 }
 .menu .comment-icon:hover{
     color: #499ef3;
