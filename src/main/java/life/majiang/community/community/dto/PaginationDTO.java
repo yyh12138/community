@@ -8,9 +8,9 @@ import java.util.List;
 //需求不仅返回问题列表，还要返回页码等信息
 //即包裹了具体一页的所有元素
 @Data
-public class PaginationDTO {
+public class PaginationDTO<T> {
 
-    private List<QuestionDTO> questions;
+    private List<T> data;
     private boolean showPrevious;
     private boolean showFirstPage;
     private boolean showNext;

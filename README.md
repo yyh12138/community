@@ -35,7 +35,7 @@ idea快捷键
 
 ctrl+F12：快速查询所有继承，查询类中所有方法
 
-Ctrl+shift+v：取出并生成匿名内部类的实例
+Ctrl+shift+v：抽出实例
 
 shift+shift：快捷查询文件
 
@@ -54,6 +54,10 @@ ctrl+alt+←：回退至上一次的页面
 alt+F7：找到所有使用此方法的类及其实现
 
 ctrl+d：拷贝一行至下一行
+
+ctrl+alt+m：抽出方法
+
+ctrl+alt+p：从方法中抽出变量至参数列表
 
 思路：
 1、由页面路径创建controller，controller内方法（返回值为该页面）接收前端信息，并将数据传到页面（model）
