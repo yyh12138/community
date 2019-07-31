@@ -18,15 +18,16 @@ public class IndexController {
     private QuestionService questionService;
 
     @GetMapping("/")
-    public String index(HttpServletRequest request,
-                        Model model,
+    public String index(Model model,
                         @RequestParam(name = "page",defaultValue = "1")Integer page,
-                        @RequestParam(name = "size",defaultValue = "5")Integer size){
+                        @RequestParam(name = "size",defaultValue = "5")Integer size,
+                        @RequestParam(name = "search",required = false)String search){
 
         //从数据库遍历拿到问题
-        PaginationDTO pagination = questionService.list(page,size);
+        PaginationDTO pagination = questionService.list(search,page,size);
         //*mapper与model对应。若使question表与user表关联，就在dao层实现，这样会使逻辑上混乱，所以出现service层，实现“封装”
         model.addAttribute("pagination",pagination);
+        model.addAttribute("search",search);
         return "index";
     }
 }
