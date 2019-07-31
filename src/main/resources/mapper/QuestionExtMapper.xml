@@ -40,7 +40,7 @@
         from QUESTION
         <where>
             <if test="search!=null">
-                and title regexp #{search}
+                title regexp #{search}
             </if>
         </where>
     </select>
@@ -51,7 +51,7 @@
         from QUESTION
         <where>
             <if test="search!=null">
-                and title regexp #{search}
+                title regexp #{search}
             </if>
         </where>
         order by gmt_create desc
