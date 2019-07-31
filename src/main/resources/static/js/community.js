@@ -71,14 +71,12 @@ function collapseComments(e) {
         } else {
             $.getJSON("/comment/" + id, function (data) {
                 $.each(data.data.reverse(), function (index, comment) {
-
                     var mediaLeftElement = $("<div/>",{
                        "class":"media-left"
                     }).append($("<img/>", {
                         "class": "media-object img-rounded",
                         "src": comment.user.avatarUrl
                     }));
-
                     var mediaBodyElement = $("<div/>",{
                         "class":"media-body"
                     }).append($("<h5/>",{
@@ -92,7 +90,6 @@ function collapseComments(e) {
                         "class":"pull-right",
                         "html":moment(comment.gmtCreate).format('YYYY-MM-DD')
                     })));
-
                     var mediaElement = $("<div/>",{
                         "class":"media"
                     }).append(mediaLeftElement)

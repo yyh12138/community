@@ -1,6 +1,6 @@
-## 这是一个创建社区的代码
+# 这是一个创建社区的代码
 
-资料
+## 资料
 
 [themleaf](https://spring.io/guides/gs/serving-web-content/)
 
@@ -24,14 +24,17 @@
 
 [js的moment工具包](http://momentjs.cn/docs/)
 
-脚本操作：
+[富文本编辑器](https://pandao.github.io/editor.md/)
+
+
+## 脚本操作：
 ```
 mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
 
 
-idea快捷键
+## idea快捷键
 
 ctrl+F12：快速查询所有继承，查询类中所有方法
 
@@ -59,10 +62,10 @@ ctrl+alt+m：抽出方法
 
 ctrl+alt+p：从方法中抽出变量至参数列表
 
-思路：
-1、由页面路径创建controller，controller内方法（返回值为该页面）接收前端信息，并将数据传到页面（model）
+### 思路：
+1. 由页面路径创建controller，controller内方法（返回值为该页面）接收前端信息，并将数据传到页面（model）
 
-2、由方法创建mapper，mapper中定义含sql注解的接口
+2. 由方法创建mapper，mapper中定义含sql注解的接口
 （若页面元素不止一张表的内容，则用dto创建新表关联两表，再提取出service，在service中先创建该方法，再在mapper中创建）
 
-3、编写页面
+3. 编写页面
