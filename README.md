@@ -62,6 +62,8 @@ ctrl+alt+m：抽出方法
 
 ctrl+alt+p：从方法中抽出变量至参数列表
 
+ctrl+p：查看所需参数
+
 ### 思路：
 1. 由页面路径创建controller，controller内方法（返回值为该页面）接收前端信息，并将数据传到页面（model）
 
@@ -69,3 +71,19 @@ ctrl+alt+p：从方法中抽出变量至参数列表
 （若页面元素不止一张表的内容，则用dto创建新表关联两表，再提取出service，在service中先创建该方法，再在mapper中创建）
 
 3. 编写页面
+
+## 部署
+###依赖
+- git 下载代码
+- jdk 编译
+- maven 构建项目
+- mysql 数据库
+### 步骤
+- yum update 更新最新包
+- yum install git 安装git
+- mkdir App
+- cd App
+- git clone https://github.com/...项目地址
+- yum install maven 安装了maven和java8
+- mvn -v 显示版本号
+- mvn compile package  
