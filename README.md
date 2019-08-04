@@ -86,4 +86,43 @@ ctrl+p：查看所需参数
 - git clone https://github.com/...项目地址
 - yum install maven 安装了maven和java8
 - mvn -v 显示版本号
-- mvn compile package  
+- mvn compile package 
+
+
+
+#### jsp基础学习
+ jsp九大内置对象(常用前5个，前2个可以获取所有其他对象)
+ 
+ | 名称 | 类型 | 含义 | 获取方式 |
+ | ------ | ------ | ------ | ------ |
+ | request | HttpServletRequest | 封装所有请求信息 | 方法参数 |
+ | response | HttpServletResponse | 封装所有响应信息 | 方法参数 |
+ | session | HttpSession | 封装所有会话信息 | request.getSession(); |
+ | application | ServletContext | 所有信息 | getServletContext();request.getServletContext(); |
+ | out | PrintWriter | 输出对象 | response.getWriter(); |
+ | exception | Exception | 异常对象 |
+ | page | Object | 当前页面对象 |
+ | pageContext | pageContext | 获取其他对象 |
+ | config | ServletConfig | 配置信息 |
+
+jsp四大作用域
+- page：在当前页面不会重新实例化。
+- request：在一次请求中是同一个对象，下次请求重新实例化一个request。在一次请求结束后被销毁。
+- session：只要客户端Cookie传递的Jsessionid不变,session不会重新实例化（不超过默认时间）
+    - 实际有效时间：1. 浏览器关闭，Cookie失效2. 默认时间（在Tomcat的web.xml中配置）范围内无任何交互
+- application：只有在Tomcat启动项目时实例化，关闭Tomcat时销毁
+
+SpringMVC作用域传值的方式
+- 使用原生Servlet
+- 使用map集合，本质是map的内容放在request作用域中，spring通过BindingAwareModelMap进行实例化
+- 使用SpringMVC中的Model接口，本质是把内容放在request作用域中
+- 使用SpringMVC中ModelAndView类，本质同上，方法体中实例化ModelAndView的对象（传页面路径），返回值为该对象（含有视图功能）
+
+
+#### 文件下载 
+
+访问资源时，如果响应头没有设置Content-Disposition，浏览器默认按inline值处理 
+- inline能显示就显示，不能显示才下载
+- 修改Content-Disposition即可。
+    - 设置响应头：response.setHeader("Content-Disposition","attachment;filename=文件名");attachment是指以附件形式下载
+- 
