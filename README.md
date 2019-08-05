@@ -38,8 +38,6 @@ mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 
 ctrl+F12：快速查询所有继承，查询类中所有方法
 
-Ctrl+shift+v：抽出实例
-
 shift+shift：快捷查询文件
 
 shift+F6：重命名
@@ -59,6 +57,10 @@ alt+F7：找到所有依赖此方法的类
 ctrl+d：拷贝一行至下一行
 
 ctrl+alt+m：抽出方法
+
+ctrl+alt+n：收回变量
+
+Ctrl+shift+v：抽出实例
 
 ctrl+alt+p：从方法中抽出变量至参数列表
 
@@ -87,6 +89,34 @@ ctrl+p：查看所需参数
 - yum install maven 安装了maven和java8
 - mvn -v 显示版本号
 - mvn compile package 
+
+
+## Spring Boot项目所用技术
+- springboot
+- IDEA
+- refactor
+- source code
+- git/github
+- bootstrap
+- github authorization
+- properties
+- session & cookies
+- mysql/h2
+- mybatis
+- distribution session
+- flyway 持续的脚本更新
+- lombok
+- dev tools 热部署
+- pagination 分页插件
+- interceptor 拦截处理业务需求
+- MBG mybatis快速生成
+- exception handler 全文处理异常
+- restful/json 
+- markdown
+- image upload
+- logging
+- profile
+- deploy
 
 
 
@@ -120,9 +150,7 @@ SpringMVC作用域传值的方式
 
 
 #### 文件下载 
-
 访问资源时，如果响应头没有设置Content-Disposition，浏览器默认按inline值处理 
 - inline能显示就显示，不能显示才下载
 - 修改Content-Disposition即可。
     - 设置响应头：response.setHeader("Content-Disposition","attachment;filename=文件名");attachment是指以附件形式下载
-- 
