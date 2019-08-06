@@ -39,8 +39,11 @@
         count(*)
         from QUESTION
         <where>
-            <if test="search!=null">
+            <if test="search!=null and search!=''">
                 title regexp #{search}
+            </if>
+            <if test="tag!=null and tag!=''">
+                tag regexp #{tag}
             </if>
         </where>
     </select>
@@ -50,8 +53,11 @@
         *
         from QUESTION
         <where>
-            <if test="search!=null">
+            <if test="search!=null and search!=''">
                 title regexp #{search}
+            </if>
+            <if test="tag!=null and tag!=''">
+                tag regexp #{tag}
             </if>
         </where>
         order by gmt_create desc

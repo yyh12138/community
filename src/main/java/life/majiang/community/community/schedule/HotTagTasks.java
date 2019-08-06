@@ -5,12 +5,11 @@ import life.majiang.community.community.mapper.QuestionMapper;
 import life.majiang.community.community.model.Question;
 import life.majiang.community.community.model.QuestionExample;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
 import java.util.*;
 
 @Component
@@ -22,8 +21,8 @@ public class HotTagTasks {
     @Autowired
     private HotTagCache hotTagCache;
 
-//    @Scheduled(fixedRate = 5000)
-    @Scheduled(cron = "0 0 1 * * *")
+    @Scheduled(fixedRate = 10000)
+//    @Scheduled(cron = "0 0 1 * * *")
     public void hotTagSchedule() {
 
         int offset = 0;
@@ -47,13 +46,8 @@ public class HotTagTasks {
             offset+=limit;
         }
 
-        hotTagCache.setTags(priorities);
-        hotTagCache.getTags().forEach(
-                (k,v)->{
-                    System.out.println(k);
-                    System.out.println(v);
-                }
-        );
+        hotTagCache.updateTags(priorities);
+
         log.info("hotTagSchedule stop {}", new Date());
     }
 }
