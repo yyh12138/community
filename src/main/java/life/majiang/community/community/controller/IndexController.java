@@ -32,6 +32,7 @@ public class IndexController {
         //*mapper与model对应。若使question表与user表关联，就在dao层实现，这样会使逻辑上混乱，所以出现service层，实现“封装”
         List<String> tags = hotTagCache.getHots();
         model.addAttribute("tags",tags);
+        model.addAttribute("tag",tag);
         model.addAttribute("pagination",pagination);
         model.addAttribute("search",search);
         return "index";
