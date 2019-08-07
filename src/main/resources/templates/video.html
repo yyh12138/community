@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>视频详情</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/community.css" type="text/css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <h3>视频选集</h3>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="question-related">
+                    <li>
+                        <a>第一集</a>
+                        <a>第二集</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 30px;">
+                <iframe src="" scrolling="no" border="0" frameborder="no" frameborder="0" allowfullscreen="true" style="width: 100%;min-height:450px;"></iframe>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding: 15px 25%;" th:insert="~{footer :: foot}"></div>
+</body>
+</html>
