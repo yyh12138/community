@@ -97,3 +97,10 @@ body{
 .menu .active{
     color: #499ef3;
 }
+
+.video{
+    padding: 30px;
+}
+.video img{
+    width: 100%;
+}
