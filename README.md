@@ -149,8 +149,6 @@ SpringMVC作用域传值的方式
 - 使用SpringMVC中ModelAndView类，本质同上，方法体中实例化ModelAndView的对象（传页面路径），返回值为该对象（含有视图功能）
 
 
-#### 文件下载 
-访问资源时，如果响应头没有设置Content-Disposition，浏览器默认按inline值处理 
-- inline能显示就显示，不能显示才下载
-- 修改Content-Disposition即可。
-    - 设置响应头：response.setHeader("Content-Disposition","attachment;filename=文件名");attachment是指以附件形式下载
+#### 注解
+- @ModelAttribute 先于参数绑定方法执行，用于解决参数null值问题。
+返回值可以是对象，然后被其他方法接收。也可以没有返回值，其他方法参数中加上该注解获取map的值
