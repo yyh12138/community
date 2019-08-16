@@ -5,7 +5,6 @@ import life.majiang.community.community.dto.AccessTokenDTO;
 import life.majiang.community.community.dto.GitHubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 
 
