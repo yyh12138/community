@@ -3,7 +3,6 @@ package life.majiang.community.community.cache;
 import life.majiang.community.community.dto.HotTagDTO;
 import lombok.Data;
 import org.springframework.stereotype.Component;
-
 import java.util.*;
 
 @Component
