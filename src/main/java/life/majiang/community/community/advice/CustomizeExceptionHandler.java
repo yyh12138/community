@@ -24,7 +24,6 @@ public class CustomizeExceptionHandler {
 
         if ("application/json".equals(contentType)){
             ResultDTO resultDTO;
-
             //返回json
             if (e instanceof CustomizeException){
                 resultDTO = ResultDTO.errorOf((CustomizeException) e);

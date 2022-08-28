@@ -22,9 +22,8 @@ public class HotTagTasks {
     private HotTagCache hotTagCache;
 
 //    @Scheduled(fixedRate = 10000)
-    @Scheduled(cron = "0 0 1 * * *")
+    @Scheduled(cron = "0 */1 * * * ?")
     public void hotTagSchedule() {
-
         int offset = 0;
         int limit = 20;
         List<Question> list = new ArrayList<>();

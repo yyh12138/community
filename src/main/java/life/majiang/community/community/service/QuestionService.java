@@ -103,9 +103,7 @@ public class QuestionService {
         if (page > totalPage) {
             page = totalPage;
         }
-
         paginationDTO.setPagination(totalPage, page);
-
         Integer offset = size * (page - 1);
 
         QuestionExample example = new QuestionExample();

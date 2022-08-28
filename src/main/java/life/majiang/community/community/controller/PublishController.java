@@ -49,7 +49,7 @@ public class PublishController {
             HttpServletRequest request,
             Model model,
             @RequestParam(value = "id",required = false) Long id){
-        //model能与thymeleaf联系，使前端后端数据交互
+        //
         model.addAttribute("title",title);
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
